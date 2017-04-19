@@ -4,17 +4,21 @@
 
 int gcd(int a,int b)
 {
-  return 1;
+  if(b==0){
+    return a;
+  }
+  else return gcd(b,a%b);
 }
 
 long int kleinsteZahl()
 {
-  long int i = 0;
-  for(;;){
-    i++;
-    if(!(i%1) && !(i%2) && !(i%3) && !(i%4) && !(i%5) && !(i%6) && !(i%7) && !(i%8) && !(i%9) && !(i%10) && !(i%11) && !(i%12) && !(i%13) && !(i%14) && !(i%15) && !(i%16) && !(i%17) && !(i%18) && !(i%19) && !(i%20)) break;
+  long int i = 20;
+  while(true){
+    if(i%20==0 && i%19==0 && i%18==0 && i%17==0 && i%16==0 && i%15==0 && i%14==0 && i%13==0 && i%12==0 && i%11==0){
+      return i;
+    }
+  i++;
   }
-  return i;
 }
 
 TEST_CASE("describe_gcd","[gcd]")
@@ -27,7 +31,7 @@ TEST_CASE("describe_gcd","[gcd]")
 
 int main(int argc, char* argv[])
 {
-  std::cout << kleinsteZahl()  << "\n";
+  std::cout <<"Die kleinste Zahl die durch 1 bis 20 teilbar ist: " << kleinsteZahl()  << "\n";
   return Catch::Session().run(argc, argv);
   return 0;
 }
