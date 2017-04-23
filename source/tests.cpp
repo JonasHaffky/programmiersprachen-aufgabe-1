@@ -73,6 +73,10 @@ bool is_prime(int x){
   }
 }
 
+//float fract(){
+
+//}
+
 TEST_CASE("describe_gcd","[gcd]")
 {
   REQUIRE(gcd(2,4) == 2);
@@ -114,6 +118,13 @@ TEST_CASE("describe_is_prime","[is_prime]")
   REQUIRE(is_prime(1) == false);
   REQUIRE(is_prime(7) == true);
 }
+
+//TEST_CASE("describe_fract","[fract]")
+//{
+  //REQUIRE(fract() == Approx().epsilon(0.001));
+  //REQUIRE(fract() == Approx().epsilon(0.001));
+  //REQUIRE(fract() == Approx().epsilon(0.001));
+//}
 
 
 int main(int argc, char* argv[])
